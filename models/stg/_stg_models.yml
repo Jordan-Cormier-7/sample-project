@@ -119,3 +119,59 @@ models:
 
       - name: receipt_date
         data_type: date
+
+  - name: stg__part
+    description: >
+      Cleansed part data.
+    columns: 
+        - name: part_id
+          data_type: int
+          description: "{{ doc('part_id') }}"
+          data_tests:
+            - not_null
+            - unique
+            - relationships:
+                  to: ref('stg__lineitem')
+                  field: part_id
+
+        - name: name
+          data_type: string
+          data_tests:
+            - not_null
+
+        - name: manufacturer_id
+          data_type: int
+          data_tests:
+            - not_null
+
+        - name: brand
+          data_type: string
+          data_tests:
+            - not_null
+
+        - name: type
+          data_type: string
+          data_tests:
+            - not_null
+        
+        - name: size
+          data_type: int
+          data_tests:
+            - not_null
+            - non_negative
+
+        - name: container
+          data_type: string
+          data_tests:
+            - not_null
+
+        - name: retailprice
+          data_type: number
+          data_tests:
+            - not_null
+            - non_negative
+
+        - name: comment
+          data_type: string
+          data_tests:
+            - not_null

@@ -52,6 +52,18 @@ models:
           - unique
           - not_null
 
+      - name: status 
+        data_type: string
+        data_tests:
+          - not_null
+
+      - name: priority_int
+        data_type: int
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: [1, 2, 3, 4, 5]
+
       - name: total_line_amount
         data_type: string
 
@@ -67,5 +79,10 @@ models:
 
       - name: high_cost_items
         data_type: int
+        data_tests:
+          - non_negative # CUSTOM TEST (at: tests/generic/non_negative.sql)
+
+      - name: total_order_size
+        data_type: number
         data_tests:
           - non_negative # CUSTOM TEST (at: tests/generic/non_negative.sql)

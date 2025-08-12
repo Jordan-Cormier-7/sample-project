@@ -160,3 +160,6 @@ models:
 
       - name: receipt_date
         data_type: date
+
+      - name: quantity
+        data_type: number
