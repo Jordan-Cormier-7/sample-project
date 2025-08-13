@@ -56,6 +56,7 @@ customer_order_with_updates as (
         order_items.high_cost_items,
         order_items.status,
         order_items.priority_int,
+        order_items.total_order_size, --Measure pulled in from int__order_items
         customer_orders.customer_id,
         customer_orders.customer_name,
 

@@ -17,7 +17,7 @@ renamed as (
 
     select 
         p_partkey as part_id,
-        INITCAP(p_name) as name, --Changes to Pascal Case
+        INITCAP(p_name) as part_name, --Changes name to Pascal Case
         p_mfgr as manufacturer_id,
         p_brand as brand,
         p_type as type,

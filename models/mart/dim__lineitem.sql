@@ -27,10 +27,10 @@ lineitem_info as (
 
         -- get amount in default configured currency, after multiplying by conversion factor (macro at: /macros/format_currency.sql)
         {{ format_currency('extended_price', var('default_currency_type')) }} as extended_price,
-        p.name
+        part_name
     from
-        lineitem l
-        join part p on l.part_id = p.part_id
+        lineitem 
+        join part using(part_id)
 
 )
 

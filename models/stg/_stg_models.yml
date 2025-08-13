@@ -134,7 +134,7 @@ models:
                   to: ref('stg__lineitem')
                   field: part_id
 
-        - name: name
+        - name: part_name
           data_type: string
           data_tests:
             - not_null
